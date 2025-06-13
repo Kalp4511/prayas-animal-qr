@@ -1,10 +1,11 @@
-!DOCTYPE html>
-html lang="en" >
-head>
-  meta charset="UTF-8" />
-  meta name="viewport" content="width=device-width, initial-scale=1" />
-  title>Animal Detail - Explorer/title>
-  style>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Animal Detail - Explorer</title>
+  <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
 
     :root {
@@ -12,7 +13,7 @@ head>
 
       /* Light theme colors */
       --color-bg: #ffffff;
-      --color-bg-glass: rgba(255 255 255 / 0.72);
+      --color-bg-glass: rgba(255, 255, 255, 0.72);
       --color-text-primary: #111827;
       --color-text-muted: #6b7280;
       --color-shadow-light: rgba(17, 24, 39, 0.08);
@@ -22,21 +23,21 @@ head>
       --btn-bg: #111827;
       --btn-bg-hover: #222f3f;
       --btn-text: #ffffff;
-      --btn-shadow: rgba(17,24,39,0.3);
+      --btn-shadow: rgba(17, 24, 39, 0.3);
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
         --color-bg: #181a1f;
-        --color-bg-glass: rgba(30 33 38 / 0.7);
+        --color-bg-glass: rgba(30, 33, 38, 0.7);
         --color-text-primary: #f9fafb;
         --color-text-muted: #a1a5b8;
-        --color-shadow-light: rgba(0,0,0,0.15);
-        --color-shadow-strong: rgba(0,0,0,0.25);
+        --color-shadow-light: rgba(0, 0, 0, 0.15);
+        --color-shadow-strong: rgba(0, 0, 0, 0.25);
         --btn-bg: #e4e6eb;
         --btn-bg-hover: #cfd1d9;
         --btn-text: #111827;
-        --btn-shadow: rgba(0,0,0,0.3);
+        --btn-shadow: rgba(0, 0, 0, 0.3);
       }
       body.dark {
         background-color: var(--color-bg);
@@ -185,6 +186,7 @@ head>
       gap: 2.5rem;
       transition: box-shadow var(--transition-speed), transform var(--transition-speed);
     }
+
     .animal-card:hover,
     .animal-card:focus-within {
       box-shadow: 0 28px 56px var(--color-shadow-strong);
@@ -222,6 +224,7 @@ head>
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
       cursor: default;
     }
+
     .animal-card img:hover,
     .animal-card img:focus {
       transform: scale(1.03);
@@ -247,11 +250,11 @@ head>
       align-self: center;
       text-decoration: none;
       display: inline-block;
-      user-select: none;
       outline-offset: 3px;
       outline-color: transparent;
       outline-style: solid;
     }
+
     .back-button:hover,
     .back-button:focus-visible {
       background-color: var(--btn-bg-hover);
@@ -270,54 +273,60 @@ head>
         font-size: 1.125rem;
         max-width: 100%;
       }
+
       .animal-card img {
         width: 100%;
       }
+
       main {
         margin: 4rem auto 4rem;
         padding: 0 2rem;
       }
     }
+
     @media (max-width: 400px) {
       header {
         padding: 0.75rem 1.25rem;
       }
+
       main {
         padding: 0 1rem;
         margin: 3rem auto 3rem;
       }
+
       .back-button {
         font-size: 1.4rem;
         padding: 0.9rem 2.5rem;
       }
     }
-  /style>
-/head>
-body>
-  header role="banner" id="page-header">
-    div class="logo" aria-label="Animal Detail Explorer Logo">Animal Detail/div>
-    nav role="navigation" aria-label="Primary navigation">
-      button class="theme-toggle" aria-pressed="false" aria-label="Toggle Dark Mode" id="theme-toggle-btn" type="button">
-        input type="checkbox" id="dark-mode-switch" aria-hidden="true" />
-        span class="slider">/span>
-      /button>
-    /nav>
-  /header>
+  </style>
+</head>
 
-  main id="main-content">
-    section class="animal-card" role="region" aria-labelledby="animal-name" tabindex="0">
-      h1 id="animal-name">Animal Name Placeholder/h1>
-      p id="animal-description">
+<body>
+  <header role="banner" id="page-header">
+    <div class="logo" aria-label="Animal Detail Explorer Logo">Animal Detail</div>
+    <nav role="navigation" aria-label="Primary navigation">
+      <button class="theme-toggle" aria-pressed="false" aria-label="Toggle Dark Mode" id="theme-toggle-btn" type="button">
+        <input type="checkbox" id="dark-mode-switch" aria-hidden="true" />
+        <span class="slider"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="animal-card" role="region" aria-labelledby="animal-name" tabindex="0">
+      <h1 id="animal-name">Animal Name Placeholder</h1>
+      <p id="animal-description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      /p>
-      img id="animal-image" src="https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg" alt="Image of animal" />
-      button class="back-button" id="back-button" type="button" aria-label="Go back to scanning page">
+      </p>
+      <img id="animal-image" src="https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg" alt="Image of animal" />
+      <button class="back-button" id="back-button" type="button" aria-label="Go back to scanning page">
         ← Scan Another Animal
-      /button>
-    /section>
-  /main>
+      </button>
+    </section>
+  </main>
 
-  script>
+  <script>
     // Dark mode toggle
     const body = document.body;
     const toggleBtn = document.getElementById('theme-toggle-btn');
@@ -353,7 +362,6 @@ body>
     })();
 
     // Example code showing how to update the animal details dynamically
-    // In your real app, you can fill these values from query parameters or server data
     const animalNameEl = document.getElementById('animal-name');
     const animalDescEl = document.getElementById('animal-description');
     const animalImgEl = document.getElementById('animal-image');
@@ -384,6 +392,7 @@ body>
         window.location.href = '/';
       }
     });
-  /script>
-/body>
-/html>
+  </script>
+</body>
+
+</html>
